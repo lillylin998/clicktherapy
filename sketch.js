@@ -13,9 +13,7 @@ function setup() {
   colorMode(HSB);
   createCanvas(windowWidth, windowHeight);
   buttons.push(new button(width/2,height/2,150,50));
-    // startTime=millis();
-    // //counter = millis();
-    // maxTime = millis() + 1000;
+
 }
 
 function draw() {
@@ -91,9 +89,8 @@ function draw() {
 function mousePressed(){
 
   if(clicks===1){
-        startTime=millis();
-    //counter = millis();
-    maxTime = millis() + 1000;
+    startTime=millis();
+    maxTime = 1000;
   }
   for(let i in buttons){
     if(mouseX >= buttons[i].x - buttons[i].width/2 && mouseX <= buttons[i].x + buttons[i].width/2 && mouseY >= buttons[i].y - buttons[i].height/2 && mouseY <= buttons[i].y + buttons[i].height/2){
