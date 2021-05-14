@@ -1,6 +1,6 @@
 let buttons = [];
 let clicks = 1;
-let serotonin = 100;
+let serotonin = 25;
 let counter = 0;
 let startTime;
 let maxTime;
@@ -13,7 +13,9 @@ function setup() {
   colorMode(HSB);
   createCanvas(windowWidth, windowHeight);
   buttons.push(new button(width/2,height/2,150,50));
-
+    // startTime=millis();
+    // //counter = millis();
+    // maxTime = millis() + 1000;
 }
 
 function draw() {
@@ -47,7 +49,7 @@ function draw() {
   } 
     push()
     rectMode(CORNER)
-    fill(32,56,100);
+    fill(0,56,100);
     noStroke();
     rect(110,15,map(counter-startTime,0,maxTime,0,serotonin),20)
     pop()
@@ -71,9 +73,9 @@ function draw() {
   if(clicks>2){
     push()
     rectMode(CORNER)
-    if(serotonin>=300){
+    if(serotonin>=500){
     fill(108,56,100);
-    } else if(serotonin < 300 && serotonin >=50){
+    } else if(serotonin < 500 && serotonin >=50){
     fill(32,56,100);
     } else{
       fill(0,56,100)
@@ -89,7 +91,8 @@ function draw() {
 function mousePressed(){
 
   if(clicks===1){
-    startTime=millis();
+        startTime=millis();
+    //counter = millis();
     maxTime = 1000;
   }
   for(let i in buttons){
